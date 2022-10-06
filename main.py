@@ -1,11 +1,12 @@
 import math
 import random
 import time
+from datetime import timedelta
 
 
 #task 1
-a=0
-bits =[ 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
+a = 0
+bits = [8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096]
 for a in range(10):
     b = pow (2, bits[a] )
     print ("If the key length is", bits[a], "then the key space is equal to", b, "\n") #task 1
@@ -84,9 +85,7 @@ def brute():
 
         if hex(n) == arr[a]:
             finish = time.perf_counter_ns()
-            duration = finish - start
-            print("keysize", bits[a], "find bit:", hex(n), "\ntime found: ", duration//1000000, " milisec", "\n")
+            duration_programm = finish - start
+            print("keysize", bits[a], "find bit:", hex(n), "\ntime found: ", duration_programm//1000000, " milisec", "\n")
             a = a + 1
 brute()
-
-input()
